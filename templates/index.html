@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>APS AI Assistant</title>
+</head>
+<body>
+
+<h2>APS AI Assistant 🤖</h2>
+
+<input type="text" id="userInput" placeholder="Enter your task">
+<button onclick="sendRequest()">Submit</button>
+
+<pre id="output"></pre>
+
+<script>
+async function sendRequest() {
+    const input = document.getElementById("userInput").value;
+
+    const response = await fetch(`/chat?user_input=${input}`);
+    const data = await response.json();
+
+    document.getElementById("output").innerText =
+        JSON.stringify(data, null, 2);
+}
+</script>
+
+</body>
+</html>
