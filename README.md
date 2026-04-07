@@ -2,8 +2,9 @@
 
 ## 📌 Overview
 
-APS System is an AI-powered assistant built using FastAPI and Google Generative AI.
-It delivers intelligent, real-time responses through a scalable backend and is deployed on Google Cloud Run.
+APS System is an AI-powered assistant built using FastAPI and Google Generative AI, designed to automate user interactions and deliver intelligent real-time responses.
+
+The system integrates modular agents, tools, and database components to create a scalable and production-ready backend, deployed on Google Cloud Run.
 
 ---
 
@@ -12,18 +13,19 @@ It delivers intelligent, real-time responses through a scalable backend and is d
 * 🐍 Python
 * ⚡ FastAPI
 * 🤖 Google Generative AI
+* 🍃 MongoDB
 * 🐳 Docker
 * ☁️ Google Cloud Run
-* 🍃 MongoDB
 
 ---
 
 ## ✨ Features
 
-* ✅ AI-powered intelligent responses
+* ✅ AI-powered intelligent response generation
+* ✅ Modular architecture using agents and tools
 * ✅ FastAPI-based high-performance backend
-* ✅ Cloud deployment using Google Cloud Run
-* ✅ Scalable and containerized architecture
+* ✅ Cloud deployment using Docker & Cloud Run
+* ✅ Scalable and extensible system design
 * ✅ REST API endpoints for integration
 
 ---
@@ -32,12 +34,30 @@ It delivers intelligent, real-time responses through a scalable backend and is d
 
 ```
 aps-system/
-│── app.py
-│── requirements.txt
-│── Dockerfile
+│── agents/          # AI logic and workflows
+│── tools/           # Utility/helper functions
+│── db/              # Database connection & operations
+│── templates/       # Frontend UI (HTML)
+│── app.py           # Main FastAPI application
+│── requirements.txt # Dependencies
+│── Dockerfile       # Container setup
+│── .env.example     # Environment variables template
 │── README.md
-│── screenshots/
 ```
+
+---
+
+## ⚡ System Architecture
+
+User → FastAPI Backend → AI Agent → Google Generative AI → Response → UI
+
+---
+
+## 📡 API Endpoints
+
+* `/` → Root endpoint
+* `/ui` → User interface
+* `/predict` → AI response generation
 
 ---
 
@@ -49,7 +69,7 @@ aps-system/
 
 ## 📸 Screenshots
 
-<img width="1917" height="950" alt="Screenshot 2026-04-06 212332" src="https://github.com/user-attachments/assets/ce6dd73f-af56-4167-a8de-551c7a4bc6b1" />
+<img width="1917" height="950" alt="Screenshot 2026-04-06 212332" src="https://github.com/user-attachments/assets/5e42cba4-6df7-4576-8c06-52aa51d758f2" />
 
 
 ---
@@ -63,19 +83,34 @@ git clone https://github.com/HariRam2172/aps-system.git
 cd aps-system
 ```
 
-### 2️⃣ Install dependencies
+### 2️⃣ Create virtual environment (optional but recommended)
+
+```bash
+python -m venv venv
+venv\Scripts\activate   # Windows
+```
+
+### 3️⃣ Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run the application
+### 4️⃣ Setup environment variables
+
+Create a `.env` file based on `.env.example`
+
+---
+
+### 5️⃣ Run the application
 
 ```bash
 uvicorn app:app --reload
 ```
 
-### 4️⃣ Open in browser
+---
+
+### 6️⃣ Open in browser
 
 ```
 http://127.0.0.1:8000/ui
@@ -85,7 +120,7 @@ http://127.0.0.1:8000/ui
 
 ## 🚀 Deployment
 
-This project is deployed using Docker and Google Cloud Run for scalability and high availability.
+This project is containerized using Docker and deployed on Google Cloud Run, ensuring scalability and high availability.
 
 ---
 
@@ -93,8 +128,8 @@ This project is deployed using Docker and Google Cloud Run for scalability and h
 
 * 🔹 Voice-based interaction
 * 🔹 Multi-language support
-* 🔹 Advanced memory with database integration
-* 🔹 UI enhancements
+* 🔹 Persistent conversation memory
+* 🔹 Enhanced UI/UX
 
 ---
 
